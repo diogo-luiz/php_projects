@@ -1,10 +1,9 @@
 <?php
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $website = $_POST["website"];
-    $website = $_POST["website"];
-    $message = $_POST["message"];
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $phone = htmlspecialchars($_POST["phone"]);
+    $website = htmlspecialchars($_POST["website"]);
+    $message = htmlspecialchars($_POST["message"]);
 
     if(!empty($email) && !empty($message)){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
